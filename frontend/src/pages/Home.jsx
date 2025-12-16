@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom';
 import { FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import logo from '../assets/logo.png';
+import sigiriyaImg from '../assets/Sigiriya.jpeg';
+import minneriyaImg from '../assets/Minneriya.jpg';
+import nineArchImg from '../assets/Nine-Arch-Bridge.jpg';
+import unawatunaImg from '../assets/Unawatuna.jpg';
 import './Home.css';
 
 const Home = () => {
     const popularLocations = [
-        { id: 1, name: 'Sigiriya', image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800' },
-        { id: 2, name: 'Mirissa Beach', image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800' },
-        { id: 3, name: 'Yala Safari', image: 'https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800' }
+        { id: 1, name: 'Minneriya', image: minneriyaImg },
+        { id: 2, name: 'Nine Arch Bridge', image: nineArchImg },
+        { id: 3, name: 'Unawatuna Beach', image: unawatunaImg }
     ];
 
     const packages = [
@@ -70,7 +74,7 @@ const Home = () => {
                         transition={{ type: "spring", stiffness: 300 }}
                     >
                         <Link to="/">
-                            <img src={logo} alt="Deshan Tours" />
+                            <img src={logo} alt="Desha Tours" />
                         </Link>
                     </motion.div>
                     <ul className="nav-links">
@@ -109,7 +113,7 @@ const Home = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.9 }}
                     >
-                        adventure
+                        Adventure
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -140,7 +144,7 @@ const Home = () => {
                     viewport={{ once: false, amount: 0.3 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="icon">🏔️</span>
+
                     <h2>Explore All Popular Locations</h2>
                 </motion.div>
                 <div className="locations-grid">
@@ -197,7 +201,7 @@ const Home = () => {
                     viewport={{ once: false, amount: 0.3 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="icon">👑</span>
+
                     <h2>Packages</h2>
                 </motion.div>
                 <div className="packages-grid">
