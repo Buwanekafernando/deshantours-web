@@ -58,42 +58,43 @@ const Home = () => {
         }
     ];
 
+
     return (
         <div className="home">
-            {/* Navbar */}
-            <motion.nav
-                className="navbar"
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-                <div className="nav-container">
-                    <motion.div
-                        className="logo"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                    >
-                        <Link to="/">
-                            <img src={logo} alt="Desha Tours" />
-                        </Link>
-                    </motion.div>
-                    <ul className="nav-links">
-                        {['HOME', 'PACKAGES', 'POPULAR', 'ABOUT', 'CONTACT'].map((item, index) => (
-                            <motion.li
-                                key={item}
-                                initial={{ y: -20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: index * 0.1 + 0.3, duration: 0.4 }}
-                            >
-                                <Link to={item === 'HOME' ? '/' : `/${item.toLowerCase()}`}>{item}</Link>
-                            </motion.li>
-                        ))}
-                    </ul>
-                </div>
-            </motion.nav>
-
             {/* Hero Section */}
             <section className="hero">
+                {/* Navbar */}
+                <motion.nav
+                    className="navbar"
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <div className="nav-container">
+                        <motion.div
+                            className="logo"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                        >
+                            <Link to="/">
+                                <img src={logo} alt="Deshan Tours" />
+                            </Link>
+                        </motion.div>
+                        <ul className="nav-links">
+                            {['HOME', 'PACKAGES', 'POPULAR', 'ABOUT', 'CONTACT'].map((item, index) => (
+                                <motion.li
+                                    key={item}
+                                    initial={{ y: -20, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ delay: index * 0.1 + 0.3, duration: 0.4 }}
+                                >
+                                    <Link to={item === 'HOME' ? '/' : `/${item.toLowerCase()}`}>{item}</Link>
+                                </motion.li>
+                            ))}
+                        </ul>
+                    </div>
+                </motion.nav>
+
                 <motion.div
                     className="hero-content"
                     initial={{ opacity: 0, y: 50 }}
@@ -137,6 +138,8 @@ const Home = () => {
 
             {/* Popular Locations */}
             <section className="popular-locations">
+
+
                 <motion.div
                     className="section-header"
                     initial={{ opacity: 0, y: 30 }}
