@@ -14,16 +14,54 @@ html {
 .navbar {
     position: relative;
     background: transparent;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     z-index: 1000;
-    padding: 1.5rem 0 1rem;
+    padding: 0;
+}
+
+
+/* Top Contact Bar */
+.top-bar {
+    width: 100%;
+    padding: 0.8rem 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-bar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.top-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+}
+
+.top-bar-item:hover {
+    color: #FF8C00;
+    transform: translateY(-1px);
+}
+
+.top-bar-icon {
+    color: #FF8C00;
+    font-size: 1.1rem;
 }
 
 .nav-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 1.5rem 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import logo from '../assets/logo.png';
 import sigiriyaImg from '../assets/Sigiriya.jpeg';
@@ -58,6 +58,18 @@ const Home = () => {
         }
     ];
 
+    const [currentTime, setCurrentTime] = React.useState(new Date());
+
+    React.useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentTime(new Date());
+        }, 1000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const formatTime = (date) => {
+        return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+    };
 
     return (
         <div className="home">
@@ -70,6 +82,25 @@ const Home = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
+                    {/* Top Contact Bar */}
+                    <div className="top-bar">
+                        <div className="top-bar-container">
+                            <div className="top-bar-item">
+                                <FaClock className="top-bar-icon" />
+                                <span>{formatTime(currentTime)}</span>
+                            </div>
+                            <div className="top-bar-item">
+                                <FaPhone className="top-bar-icon" />
+                                <span>+94 77 315 5222</span>
+                            </div>
+                            <div className="top-bar-item">
+                                <FaEnvelope className="top-bar-icon" />
+                                <span>inquiries@tourslanka.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Main Navigation */}
                     <div className="nav-container">
                         <motion.div
                             className="logo"
@@ -81,14 +112,14 @@ const Home = () => {
                             </Link>
                         </motion.div>
                         <ul className="nav-links">
-                            {['HOME', 'PACKAGES', 'POPULAR', 'ABOUT', 'CONTACT'].map((item, index) => (
+                            {['Round Trip', 'Day Trip', 'Things to Do', 'Plan Trip', 'Transport', 'Reviews', 'About', 'Contact'].map((item, index) => (
                                 <motion.li
                                     key={item}
                                     initial={{ y: -20, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ delay: index * 0.1 + 0.3, duration: 0.4 }}
                                 >
-                                    <Link to={item === 'HOME' ? '/' : `/${item.toLowerCase()}`}>{item}</Link>
+                                    <Link to={`/${item.toLowerCase().replace(/ /g, '-')}`}>{item}</Link>
                                 </motion.li>
                             ))}
                         </ul>
@@ -335,4 +366,5 @@ const Home = () => {
 };
 
 export default Home;
+
 
