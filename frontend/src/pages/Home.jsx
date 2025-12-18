@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import logo from '../assets/logo.png';
-import sigiriyaImg from '../assets/Sigiriya.jpeg';
+import { FaStar } from 'react-icons/fa';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import minneriyaImg from '../assets/Minneriya.jpg';
 import nineArchImg from '../assets/Nine-Arch-Bridge.jpg';
 import unawatunaImg from '../assets/Unawatuna.jpg';
@@ -58,73 +57,11 @@ const Home = () => {
         }
     ];
 
-    const [currentTime, setCurrentTime] = React.useState(new Date());
-
-    React.useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentTime(new Date());
-        }, 1000);
-        return () => clearInterval(timer);
-    }, []);
-
-    const formatTime = (date) => {
-        return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
-    };
-
     return (
         <div className="home">
             {/* Hero Section */}
             <section className="hero">
-                {/* Navbar */}
-                <motion.nav
-                    className="navbar"
-                    initial={{ y: -100, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                    {/* Top Contact Bar */}
-                    <div className="top-bar">
-                        <div className="top-bar-container">
-                            <div className="top-bar-item">
-                                <FaClock className="top-bar-icon" />
-                                <span>{formatTime(currentTime)}</span>
-                            </div>
-                            <div className="top-bar-item">
-                                <FaPhone className="top-bar-icon" />
-                                <span>+94 77 315 5222</span>
-                            </div>
-                            <div className="top-bar-item">
-                                <FaEnvelope className="top-bar-icon" />
-                                <span>inquiries@tourslanka.com</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Main Navigation */}
-                    <div className="nav-container">
-                        <motion.div
-                            className="logo"
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                        >
-                            <Link to="/">
-                                <img src={logo} alt="Deshan Tours" />
-                            </Link>
-                        </motion.div>
-                        <ul className="nav-links">
-                            {['Round Trip', 'Day Trip', 'Things to Do', 'Plan Trip', 'Transport', 'Reviews', 'About', 'Contact'].map((item, index) => (
-                                <motion.li
-                                    key={item}
-                                    initial={{ y: -20, opacity: 0 }}
-                                    animate={{ y: 0, opacity: 1 }}
-                                    transition={{ delay: index * 0.1 + 0.3, duration: 0.4 }}
-                                >
-                                    <Link to={`/${item.toLowerCase().replace(/ /g, '-')}`}>{item}</Link>
-                                </motion.li>
-                            ))}
-                        </ul>
-                    </div>
-                </motion.nav>
+                <Navbar />
 
                 <motion.div
                     className="hero-content"
@@ -334,37 +271,9 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="footer">
-                <div className="footer-content">
-                    <div className="footer-section">
-                        <h3>Address</h3>
-                        <p>123 Galle Road,</p>
-                        <p>Colombo 03,</p>
-                        <p>Sri Lanka</p>
-                    </div>
-                    <div className="footer-section">
-                        <h3>Contact</h3>
-                        <p><FaPhone /> +94 77 123 4567</p>
-                        <p><FaEnvelope /> info@deshantours.com</p>
-                        <p><FaMapMarkerAlt /> Find us on map</p>
-                    </div>
-                    <div className="footer-section">
-                        <h3>Office Hours</h3>
-                        <p>Monday - Friday</p>
-                        <p>9:00 AM - 6:00 PM</p>
-                        <p>Saturday: 9:00 AM - 2:00 PM</p>
-                    </div>
-                    <div className="footer-cta">
-                        <h2>Let's plan your next trip</h2>
-                        <button className="footer-button">Contact Us</button>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };
 
 export default Home;
-
-
