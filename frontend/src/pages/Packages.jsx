@@ -4,6 +4,7 @@ import { FaCloud } from 'react-icons/fa'; // Using cloud icon as placeholder lik
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './Packages.css';
+import heroImg from '../assets/sri-lankan-leopard-yala.jpg';
 
 const Packages = () => {
     const categories = [
@@ -20,7 +21,12 @@ const Packages = () => {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="packages-hero">
+            <section
+                className="packages-hero"
+                style={{
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImg})`
+                }}
+            >
                 <div className="packages-hero-content">
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}

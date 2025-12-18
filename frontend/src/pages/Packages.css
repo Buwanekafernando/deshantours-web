@@ -5,16 +5,26 @@
     width: 100%;
 }
 
+/* Navbar Overlay for Packages Page */
+.packages-page .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
 /* Hero Section */
 .packages-hero {
-    height: 60vh;
-    min-height: 500px;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('https://images.unsplash.com/photo-1547900720-7f920263309a?w=1600') center/cover no-repeat;
-    /* Wildlife/Leopard background */
+    height: 100vh;
+    /* Full viewport height */
+    min-height: 600px;
+    /* background set in JSX */
     display: flex;
     flex-direction: column;
     position: relative;
+    background-size: cover;
+    background-position: center;
 }
 
 .packages-hero-content {

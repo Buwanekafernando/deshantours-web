@@ -35,11 +35,11 @@ const Navbar = () => {
                     </div>
                     <div className="top-bar-item">
                         <FaPhone className="top-bar-icon" />
-                        <span>+94 77 315 5222</span>
+                        <span>+94 77 787 4085 </span>
                     </div>
                     <div className="top-bar-item">
                         <FaEnvelope className="top-bar-icon" />
-                        <span>inquiries@tourslanka.com</span>
+                        <span>deshantours@gmail.com</span>
                     </div>
                 </div>
             </div>
