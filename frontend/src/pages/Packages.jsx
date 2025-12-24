@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaCloud } from 'react-icons/fa'; // Using cloud icon as placeholder like in image
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import './Packages.css';
+import '../styles/Packages.css';
 import heroImg from '../assets/sri-lankan-leopard-yala.jpg';
 
 const Packages = () => {

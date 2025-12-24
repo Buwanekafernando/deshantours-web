@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import '../pages/Home.css'; // Reusing Home.css for styles
+import '../styles/Home.css'; // Reusing Home.css for styles
 
 const Footer = () => {
     return (

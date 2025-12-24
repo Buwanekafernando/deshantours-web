@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaClock, FaPhone, FaEnvelope } from 'react-icons/fa';
 import logo from '../assets/logo.png';
-import '../pages/Home.css'; // Reusing Home.css for now as styles are there. Ideally move to Navbar.css later.
+import '../styles/Home.css'; // Reusing Home.css for now as styles are there. Ideally move to Navbar.css later.
 
 const Navbar = () => {
     const [currentTime, setCurrentTime] = useState(new Date());

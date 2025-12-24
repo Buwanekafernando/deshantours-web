@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import minneriyaImg from '../assets/Minneriya.jpg';
 import nineArchImg from '../assets/Nine-Arch-Bridge.jpg';
 import unawatunaImg from '../assets/Unawatuna.jpg';
-import './Home.css';
+import '../styles/Home.css';
 
 const Home = () => {
     const popularLocations = [
