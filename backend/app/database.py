@@ -11,7 +11,6 @@ db = client["deshantours_db"]
 package_collection = db["packages"]
 transport_collection = db["transport"]
 places_collection = db["places"]
-guide_collection = db["guide"]
 hotel_collection = db["hotel"]
 
 
