@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaPlus, FaEdit, FaTrash, FaTimes, FaBox, FaMapMarkerAlt, FaImage } from 'react-icons/fa';
+import { FaPlus, FaEdit, FaTrash, FaTimes, FaSuitcaseRolling, FaMapMarkerAlt, FaImage } from 'react-icons/fa';
 
 const AdminPackages = () => {
     const [packages, setPackages] = useState([]);
@@ -163,7 +163,7 @@ const AdminPackages = () => {
                                         onError={(e) => { e.target.onerror = null; e.target.src = 'https://via.placeholder.com/400x300?text=No+Image'; }}
                                     />
                                 ) : (
-                                    <FaBox style={{ fontSize: '4rem', color: 'rgba(255,255,255,0.5)' }} />
+                                    <FaSuitcaseRolling style={{ fontSize: '4rem', color: 'rgba(255,255,255,0.5)' }} />
                                 )}
                                 <div className="card-badge">
                                     ${pkg.total_price}

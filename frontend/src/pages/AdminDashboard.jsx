@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    FaBoxOpen,
+    FaSuitcaseRolling,
     FaMapMarkedAlt,
     FaBus,
     FaHotel,
@@ -12,6 +12,7 @@ import AdminPackages from '../components/admin/AdminPackages';
 import AdminPlaces from '../components/admin/AdminPlaces';
 import AdminTransport from '../components/admin/AdminTransport';
 import AdminHotels from '../components/admin/AdminHotels';
+import logo from '../assets/logo.png';
 import '../styles/admin.css';
 
 import axios from 'axios';
@@ -40,7 +41,7 @@ const AdminDashboard = () => {
 
     const menuItems = [
         { id: 'overview', label: 'Overview', icon: <FaTachometerAlt /> },
-        { id: 'packages', label: 'Packages', icon: <FaBoxOpen /> },
+        { id: 'packages', label: 'Packages', icon: <FaSuitcaseRolling /> },
         { id: 'places', label: 'Places', icon: <FaMapMarkedAlt /> },
         { id: 'transport', label: 'Transport', icon: <FaBus /> },
         { id: 'hotels', label: 'Hotels', icon: <FaHotel /> },
@@ -65,9 +66,7 @@ const AdminDashboard = () => {
                 className="admin-sidebar"
             >
                 <div className="sidebar-header">
-                    <div className="logo-icon">
-                        <FaTachometerAlt className="text-white" />
-                    </div>
+                    <img src={logo} alt="DeshanTours Logo" style={{ height: '40px', width: 'auto', marginRight: '10px' }} />
                     <h1 className="brand-name">DeshanTours</h1>
                 </div>
 

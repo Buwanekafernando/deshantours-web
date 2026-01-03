@@ -451,9 +451,19 @@
     font-size: 1.25rem;
 }
 
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
 .modal-body {
     padding: 1.5rem;
     overflow-y: auto;
+    flex: 1;
+    /* Allow body to grow and scroll while keeping header/footer fixed */
 }
 
 .form-group {
