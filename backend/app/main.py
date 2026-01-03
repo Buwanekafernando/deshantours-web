@@ -17,5 +17,16 @@ app.include_router(places_router.router)
 app.include_router(transport_router.router)
 app.include_router(hotels_router.router)
 
+from app.database import package_collection, places_collection, transport_collection, hotel_collection
+
+@app.get("/stats")
+async def get_stats():
+    return {
+        "packages": await package_collection.count_documents({}),
+        "places": await places_collection.count_documents({}),
+        "transport": await transport_collection.count_documents({}),
+        "hotels": await hotel_collection.count_documents({})
+    }
+
 
 
